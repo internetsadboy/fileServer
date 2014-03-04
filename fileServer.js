@@ -21,7 +21,9 @@ module.exports = function(file, req, res) {
     if(exists) {
       res.writeHead(200, {'content-type':type});
       fs.createReadStream(file).pipe(res);
-    } else console.log(file, 'file dne');
+    } else {
+      console.log(file, 'file dne');
+    }
   });
 }
 
