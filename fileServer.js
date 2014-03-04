@@ -1,4 +1,5 @@
 module.exports = function(file, req, res) {
+  
   var fs = require('fs')
     , ext = require('path').extname(file)
     , type = ''
@@ -11,12 +12,14 @@ module.exports = function(file, req, res) {
         'png':'image/png',
         'wav':'audio/wav'
       };
+      
   for(var i in fileExtensions) {
     if(ext === i) {
       type = fileExtensions[i];
       break;
     }
   }
+  
   fs.exists(file, function(exists) {
     if(exists) {
       res.writeHead(200, {'content-type':type});
@@ -25,5 +28,6 @@ module.exports = function(file, req, res) {
       console.log(file, 'file dne');
     }
   });
+  
 }
 
