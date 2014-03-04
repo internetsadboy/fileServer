@@ -27,7 +27,7 @@ module.exports = function(file, req, res) {
     } else {
       console.log(file, 'file dne');
     }
-  });
+  })
   
 }
 
