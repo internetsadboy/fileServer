@@ -30,4 +30,3 @@ module.exports = function(file, req, res) {
   })
   
 }
-
